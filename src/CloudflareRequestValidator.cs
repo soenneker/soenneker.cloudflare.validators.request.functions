@@ -13,7 +13,7 @@ using Soenneker.Extensions.ValueTask;
 using Soenneker.Utils.AsyncSingleton;
 using Soenneker.Utils.File.Abstract;
 using Soenneker.Extensions.String;
-using Soenneker.Extensions.Spans.Readonly;
+using Soenneker.Extensions.Spans.Readonly.Bytes;
 using Soenneker.Utils.Paths.Resources;
 
 namespace Soenneker.Cloudflare.Validators.Request.Functions;
