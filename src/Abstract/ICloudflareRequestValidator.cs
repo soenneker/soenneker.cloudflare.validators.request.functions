@@ -1,6 +1,7 @@
 ﻿using Microsoft.Azure.Functions.Worker.Http;
 using Soenneker.Validators.Validator.Abstract;
 using System;
+using System.Diagnostics.Contracts;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,5 +12,6 @@ namespace Soenneker.Cloudflare.Validators.Request.Functions.Abstract;
 /// </summary>
 public interface ICloudflareRequestValidator : IValidator, IDisposable, IAsyncDisposable
 {
+    [Pure]
     ValueTask<bool> IsFromCloudflare(HttpRequestData req, CancellationToken cancellationToken = default);
 }
