@@ -41,7 +41,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.Azure.Functions.Worker.Core" Version="2.50.0" />
+        <PackageReference Include="Microsoft.Azure.Functions.Worker.Core" Version="2.51.0" />
         <PackageReference Include="Soenneker.Cloudflare.OriginCerts.Thumbprints" Version="4.0.9" PrivateAssets="analyzers;build" />
         <PackageReference Include="Soenneker.Extensions.Spans.Readonly.Bytes" Version="4.0.5" />
         <PackageReference Include="Soenneker.Utils.File" Version="4.0.1995" />
