@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.Cloudflare.Validators.Request.Functions.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Cloudflare.Validators.Request.Functions\Soenneker.Cloudflare.Validators.Request.Functions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
