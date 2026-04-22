@@ -1,20 +1,19 @@
-﻿using Soenneker.Cloudflare.Validators.Request.Functions.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Cloudflare.Validators.Request.Functions.Abstract;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Cloudflare.Validators.Request.Functions.Tests;
 
-[Collection("Collection")]
-public sealed class CloudflareRequestValidatorTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class CloudflareRequestValidatorTests : HostedUnitTest
 {
     private readonly ICloudflareRequestValidator _validator;
 
-    public CloudflareRequestValidatorTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public CloudflareRequestValidatorTests(Host host) : base(host)
     {
         _validator = Resolve<ICloudflareRequestValidator>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
