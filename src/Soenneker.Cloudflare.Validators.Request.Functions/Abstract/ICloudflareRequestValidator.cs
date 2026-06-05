@@ -12,6 +12,12 @@ namespace Soenneker.Cloudflare.Validators.Request.Functions.Abstract;
 /// </summary>
 public interface ICloudflareRequestValidator : IValidator, IDisposable, IAsyncDisposable
 {
+    /// <summary>
+    /// Executes the is from cloudflare operation.
+    /// </summary>
+    /// <param name="req">The req.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     [Pure]
     ValueTask<bool> IsFromCloudflare(HttpRequestData req, CancellationToken cancellationToken = default);
 }

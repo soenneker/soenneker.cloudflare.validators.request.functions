@@ -73,6 +73,12 @@ public sealed class CloudflareRequestValidator : Validator, ICloudflareRequestVa
         return await Validate(data.ToSha256Hex(), cancellationToken).NoSync();
     }
 
+    /// <summary>
+    /// Executes the validate operation.
+    /// </summary>
+    /// <param name="thumbprint">The thumbprint.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     public async ValueTask<bool> Validate(string thumbprint, CancellationToken cancellationToken = default)
     {
         if (thumbprint.IsNullOrWhiteSpace())
@@ -94,11 +100,18 @@ public sealed class CloudflareRequestValidator : Validator, ICloudflareRequestVa
         return false;
     }
 
+    /// <summary>
+    /// Asynchronously releases resources used by the current instance.
+    /// </summary>
+    /// <returns>A task that represents the asynchronous operation.</returns>
     public ValueTask DisposeAsync()
     {
         return _thumbprintsSet.DisposeAsync();
     }
 
+    /// <summary>
+    /// Releases resources used by the current instance.
+    /// </summary>
     public void Dispose()
     {
         _thumbprintsSet.Dispose();
