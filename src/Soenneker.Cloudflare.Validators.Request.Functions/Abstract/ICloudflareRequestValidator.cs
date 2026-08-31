@@ -8,16 +8,22 @@ using System.Threading.Tasks;
 namespace Soenneker.Cloudflare.Validators.Request.Functions.Abstract;
 
 /// <summary>
-/// A validator for Azure Functions that verifies incoming requests originate from Cloudflare by checking the client certificate thumbprint.
+/// Validates Azure Functions requests using the client certificate forwarded by Azure App Service.
 /// </summary>
 public interface ICloudflareRequestValidator : IValidator, IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Executes the is from cloudflare operation.
+    /// Compares the SHA-256 fingerprint of the certificate in <c>X-ARR-ClientCert</c> with the packaged Cloudflare fingerprints.
     /// </summary>
     /// <param name="req">The req.</param>
     /// <param name="cancellationToken">The cancellation token.</param>
     /// <returns>A task containing the result of the operation.</returns>
     [Pure]
     ValueTask<bool> IsFromCloudflare(HttpRequestData req, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Compares a SHA-256 certificate fingerprint with the packaged Cloudflare certificate fingerprints.
+    /// </summary>
+    [Pure]
+    ValueTask<bool> Validate(string thumbprint, CancellationToken cancellationToken = default);
 }

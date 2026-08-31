@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A validator for Azure Functions that verifies incoming requests originate from Cloudflare by checking the client certificate thumbprint.</Description>
+        <Description>Validates Azure Functions requests against packaged Cloudflare origin-pull certificate fingerprints.</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Cloudflare.Validators.Request.Functions</AssemblyName>
