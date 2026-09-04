@@ -19,6 +19,7 @@ using Soenneker.Utils.Paths.Resources.Abstract;
 
 namespace Soenneker.Cloudflare.Validators.Request.Functions;
 
+/// <inheritdoc cref="ICloudflareRequestValidator" />
 public sealed class CloudflareRequestValidator : Validator, ICloudflareRequestValidator
 {
     private readonly AsyncSingleton<HashSet<string>> _thumbprintsSet;
