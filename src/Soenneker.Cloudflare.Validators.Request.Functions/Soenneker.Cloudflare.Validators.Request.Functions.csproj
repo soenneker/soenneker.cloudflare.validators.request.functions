@@ -46,8 +46,8 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.Azure.Functions.Worker.Core" Version="2.52.0" />
         <PackageReference Include="Soenneker.Cloudflare.OriginCerts.Thumbprints" Version="4.0.40" PrivateAssets="analyzers;build" />
-        <PackageReference Include="Soenneker.Utils.File" Version="4.0.2271" />
-        <PackageReference Include="Soenneker.Utils.Paths.Resources" Version="4.0.257" />
+        <PackageReference Include="Soenneker.Utils.File" Version="4.0.2272" />
+        <PackageReference Include="Soenneker.Utils.Paths.Resources" Version="4.0.258" />
         <PackageReference Include="Soenneker.Validators.Validator" Version="4.0.739" />
     </ItemGroup>
 </Project>
